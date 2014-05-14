@@ -1,5 +1,4 @@
-class User
-
+class User < ActiveRecord::Base
  
   
   attr_reader :password
@@ -7,8 +6,8 @@ class User
   before_validation :ensure_token
 
   validates :session_token, :presence => true
-  validates :username, :user_email, :password_digest, :presence => true
-  validates :username, :user_email, :uniqueness => true
+  validates :username, :email, :password_digest, :presence => true
+  validates :username, :email, :uniqueness => true
 
   has_many :items
 
