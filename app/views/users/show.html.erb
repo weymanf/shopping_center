@@ -1,22 +1,22 @@
 <h2> <%= current_user.username %> </h2>
-	
+
 
 
 <p>
-Credits: <%= current_user.cash %>
-<p>	
+	Credits: <%= current_user.cash %>
+	<p>	
 
-<h3> Input more credits </h3>
-<form action="<%= user_url(current_user.id)%>" method="post" %>
+		<h3> Input more credits </h3>
+		<form action="<%= user_url(current_user.id)%>" method="post" %>
 
-<input type="hidden" value= "<%= form_authenticity_token %>" name="authenticity_token" %>
-<input name="_method" type="hidden" value="patch" />
+			<input type="hidden" value= "<%= form_authenticity_token %>" name="authenticity_token" %>
+			<input name="_method" type="hidden" value="patch" />
 
-<label>
-	Add More Credits
-	<input type="number" step="any" name="user[:cash]"/>
-</labe>
+			<label>
+				Add More Credits
+				<input type="number" step="any" name="user[:cash]"/>
+			</labe>
 
-	<input type="submit" value="Make me Rich">
+			<input type="submit" value="Make me Rich">
 
-</form>
+		</form>
